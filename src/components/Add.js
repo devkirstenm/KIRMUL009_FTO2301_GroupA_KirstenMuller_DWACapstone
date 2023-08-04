@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { ResultCard } from "./ResultCard";
 
 export const Add = () => {
   
@@ -30,8 +31,8 @@ export const Add = () => {
         // otherwise set it to an empty array (no )
         : [] 
     )
-  );
-};
+    );
+  };
 
   return (
     <div className="add-page">
@@ -49,16 +50,7 @@ export const Add = () => {
           <div>
             {results.map((podcast) => ( // parameter 'podcast' represents each item in the array during each iteration of the .map function (see README.md for more of an explanation)
                 <div key={podcast.id}>
-               
-                    <div className="watchlater-card">   
-                        <img src={podcast.image} className="watchlater-image"/>
-                        <div className="watchlater-info">
-                          <h2>{podcast.title}</h2>
-                          <p>{podcast.description.split(' ').slice(0, 20).join(' ')}...</p> {/* 'split' splits description into array of individual words. 'slice 0,20' extract first 20 words from array, which we join back together. Then append with '...' */}
-                          <p><span>Seasons:</span> {podcast.seasons}</p>
-                          <button className="watchlater-button">ADD TO WATCHLATER</button>
-                        </div> 
-                    </div> 
+                  <ResultCard podcast={podcast} />
                 </div> 
             ))}
             </div>
@@ -68,6 +60,7 @@ export const Add = () => {
     </div>
   );
 };
+
 
 
 

@@ -297,7 +297,7 @@ header .nav-links li:last-child {
 
 /* MY OWN CSS */
 
-/* Watchlater */
+/* Add.js */
 .watchlater-card {
   padding: 20px;
   display: flex;
@@ -334,5 +334,52 @@ header .nav-links li:last-child {
 .watchlater-button:hover {
   background-color: #0056b3; /* Darker shade on hover, adjust as needed */
 
+}
+
+.watchlater-button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+
+/* Watchlater.js */
+.podcast-previews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.podcast-preview {
+  width: 300px;
+  margin: 10px;
+  padding: 14px;
+}
+
+.podcast-preview h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.podcast-preview img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+  border-radius: 30px
+}
+
+.podcast--image:hover {
+  filter: brightness(50%);
+}
+
+.podcast-preview p {
+  font-size: 14px;
+}
+
+.preview--text {
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.preview--bold--text {
+font-weight: bolder;
 }
 
