@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import { Add } from "./components/Add";
 import "./App.css";
 import { GlobalProvider } from "./context/GlobalState";
-
+import PodcastInfo from "./components/PodcastInfo";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Route exact path="/watchlater" element={<Watchlater />} />
           <Route exact path="/add" element={<Add />} />
           <Route exact path="/home" element={<Home />} />
+          <Route path="/podcast/:id" element={ <PodcastInfo/> } />
         </Routes>
       </Router>
     </GlobalProvider>

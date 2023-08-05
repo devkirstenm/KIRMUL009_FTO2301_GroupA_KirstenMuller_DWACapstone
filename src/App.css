@@ -455,6 +455,17 @@ font-weight: bolder;
   text-overflow: ellipsis; /* Show ellipsis (...) for cut-off text */
 }
 
+.button-link {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
 
 /* MODAL */
 .modal--overlay {
@@ -580,4 +591,97 @@ font-weight: bolder;
 
 .progress--bar {
   background: none;
+}
+
+
+/* Podcast Info */
+
+.podcast-title {
+  font-size: 35px;
+  font-weight: bold;
+  color: #333;
+}
+
+.podcast-description {
+  font-size: 17px;
+  color: #555;
+}
+
+.season-title {
+  font-size: 27px;
+  font-weight: bold;
+  color: #333;
+}
+
+.season-container {
+  /* Your season container styles here */
+}
+
+.season-info {
+  font-size: 23px;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.season-info:hover {
+  color: #000000;
+  font-weight: bolder;
+}
+
+.season-image {
+  max-width: 300px;
+}
+
+.episode-title {
+  font-size: 23px;
+  font-weight: bold;
+  color: #333;
+}
+
+.episode-container {
+  /* Your episode container styles here */
+}
+
+.episode-info {
+  font-size: 18px;
+  color: #555;
+  font-weight: bold;
+}
+
+.episode-description {
+  font-size: 16px;
+  color: #777;
+}
+
+.episode-file {
+  font-size: 12px;
+  color: #999;
+}
+
+/* sorting options */
+.sorting-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 16px;
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+select {
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
 }
