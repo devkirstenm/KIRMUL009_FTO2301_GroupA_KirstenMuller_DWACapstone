@@ -1,18 +1,21 @@
-import React, { useContext } from "react"; 
-import {GlobalContext} from "../context/GlobalState"
+import React, { useContext, useState } from "react";
+import { GlobalContext } from "../context/GlobalState";
 import { PodcastCard } from "./PodcastCard";
 
 export const Watchlater = () => {
-  const { watchlater } = useContext(GlobalContext)
+  const { watchlater } = useContext(GlobalContext);
+  
+  // State for the selected sorting option
+  const [selectedOption, setSelectedOption] = useState("a-z");
 
-  const [selectedOption, setSelectedOption] = React.useState("a-z");
-
+  // Function to handle sorting option change
   const handleSortingChange = (e) => {
     setSelectedOption(e.target.value);
   };
 
-  const sortPodcasts = () => {
-    switch (selectedOption) { // Use selectedOption instead of option
+  // Function to sort podcasts based on the selected option
+  const sortPodcasts = (option) => {
+    switch (option) {
       case "a-z":
         return [...watchlater].sort((a, b) => a.title.localeCompare(b.title));
       case "z-a":
@@ -26,35 +29,33 @@ export const Watchlater = () => {
     }
   };
 
+  // Get sorted podcasts based on the selected option
+  const sortedPodcasts = sortPodcasts(selectedOption);
+
   return (
     <div className="container">
-      <div>
-        {/* sorting options */}
-        <form className="sorting--options">
-            <label htmlFor="sorting">Sort by:</label>
-            <br />
-            <select id="sorting" value={selectedOption} onChange={handleSortingChange}>
-                <option value="a-z">A-Z</option>
-                <option value="z-a">Z-A</option>
-                <option value="date-newest-first">Data: Newest first</option>
-                <option value="date-oldest-first">Date: Oldest first</option>
-            </select>
-        </form>
-      </div>
+      {/* Sorting options */}
+      <form className="sorting--options">
+        <label htmlFor="sorting">Sort by:</label>
+        <br />
+        <select id="sorting" value={selectedOption} onChange={handleSortingChange}>
+          <option value="a-z">A-Z</option>
+          <option value="z-a">Z-A</option>
+          <option value="date-newest-first">Data: Newest first</option>
+          <option value="date-oldest-first">Date: Oldest first</option>
+        </select>
+      </form>
 
-      {watchlater.length > 0 ? (
-        <div className="podcast-previews">
-        {watchlater.map((podcast) => ( // parameter 'podcast' represents each item in the array during each iteration of the .map function (see README.md for more of an explanation)
-          <PodcastCard podcast={podcast} type="watchlater"/>
-        ))}
-    </div>
-      ) : (
-        <h2>No Podcasts added yet</h2>
-      )}
-      
+      {/* Display podcasts */}
+      <div className="podcast-previews">
+        {sortedPodcasts.length > 0 ? (
+          sortedPodcasts.map((podcast, index) => (
+            <PodcastCard key={index} podcast={podcast} type="watchlater" />
+          ))
+        ) : (
+          <h2>No Podcasts added yet</h2>
+        )}
+      </div>
     </div>
   );
 };
-
-
-
