@@ -7,12 +7,14 @@ import { Add } from "./components/Add";
 import "./App.css";
 import { GlobalProvider } from "./context/GlobalState";
 import PodcastInfo from "./components/PodcastInfo";
+import AudioPlayer from "./components/AudioPlayer";
 
 function App() {
   return (
     <GlobalProvider>
       <Router>
         <Header />
+        <AudioPlayer />
         <Routes>
           <Route exact path="/watchlater" element={<Watchlater />} />
           <Route exact path="/add" element={<Add />} />
