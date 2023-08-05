@@ -1,34 +1,35 @@
-import React, { useRef } from "react"
-// installed react-icons
-import {BsArrowLeftShort} from "react-icons/bs"
-import {BsArrowRightShort} from "react-icons/bs"
-import {FaPlay} from "react-icons/fa"
-import {FaPause} from "react-icons/fa"
+import React, { useRef, useEffect, useState } from "react";
+import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
+import { FaPlay, FaPause } from "react-icons/fa";
 
+export default function AudioPlayer({ episodeFile }) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  // audio source will be set based on the selected episode file
+  const audioPlayer = useRef(null);
+  const progressBar = useRef();
+  const animationRef = useRef();
 
-export default function AudioPlayer() {
+  useEffect(() => {
+    const seconds = Math.floor(audioPlayer.current.duration);
+    setDuration(seconds);
+    progressBar.current.max = seconds;
+  }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
 
-    // state
-    // is the audio playing state
-    const [isPlaying, setIsPlaying] = React.useState(false); // by default, player is not playing automatically
-    // state to set and change duration of audio 
-    const [duration, setDuration] = React.useState(0); // default is 0
-    // state to set and change the time of the audio 
-    const [currentTime, setCurrentTime] = React.useState(0);
-
-    // references
-    const audioPlayer = useRef(); // reference to the audio component
-    const progressBar = useRef(); // reference to the progress bar
-    const animationRef = useRef(); // reference to the animation (tracking progress bar)
-
-    // logic to display the audio in seconds without decimals (e.g., 20.83928032 seconds)
-    React.useEffect(() => {
-        const seconds = Math.floor(audioPlayer.current.duration);
-        setDuration(seconds);
-        progressBar.current.max = seconds;
-        // component will run as soon as the audio player has loaded (metadata is ready/exists). Necessary because Audio file may have not loaded yet so you will want to include this
-    }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]); // "if audioPlayer exists? and if current exists? then it must update when the loaded meta data is available""
-
+  useEffect(() => {
+    if (episodeFile) {
+      audioPlayer.current = new Audio(episodeFile); // Use the provided episodeFile to create the audio element
+      setIsPlaying(true);
+      audioPlayer.current.play();
+      animationRef.current = requestAnimationFrame(whilePlaying);
+    } else {
+      setIsPlaying(false);
+      audioPlayer.current.pause();
+      cancelAnimationFrame(animationRef.current);
+    }
+  }, [episodeFile]);
+  
     // logic to format time correctly with minutes and seconds
     const calculateTime = (secs) => {
         // get minutes
@@ -91,7 +92,9 @@ export default function AudioPlayer() {
         changeRange()
     }
 
+
     return (
+        <div className="inner-container">
         <div className="audio--player">
             <audio ref={audioPlayer} src="https://podcast-api.netlify.app/placeholder-audio.mp3"></audio>
 
@@ -114,6 +117,7 @@ export default function AudioPlayer() {
             {/* duration */}
             <div className="duration">{(duration && !isNaN(duration)) && calculateTime(duration)}</div> {/* *not working* needed to add conditional statement because of bug. Bug: time display NaN when audio isn't playing - it's trying to display the duration before it's ready */}
 
+        </div>
         </div>
     )
 }

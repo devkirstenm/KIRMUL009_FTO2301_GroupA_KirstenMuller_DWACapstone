@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react"; // Import useEffect and useState
 import { useParams } from "react-router-dom";
+import AudioPlayer from "./AudioPlayer";
 
 const PodcastInfo = () => {
   const { id } = useParams(); // Get the podcast ID from the URL parameter
   console.log(id)
+
   const [selectedPodcast, setSelectedPodcast] = useState(null); // the initial value of selectedPodcast should be set to null instead of undefined, since it will be updated with an object (the data fetched from the API) later on.
+
+  const [selectedEpisodeFile, playEpisode] = useState(null); // Rename setSelectedEpisodeFile to playEpisode
 
     useEffect(() => {
         fetch(`https://podcast-api.netlify.app/id/${id}`)
@@ -59,7 +63,7 @@ const PodcastInfo = () => {
                     <div className="episode-container" key={episode.episode}>
                       <p className="episode-info">{`Episode ${episode.episode}: ${episode.title}`}</p>
                       <p className="episode-description">{episode.description}</p>
-                      <p className="episode-file">{episode.file}</p>
+                      <button className="episode-file" onClick={() => playEpisode(episode.file)}>Play episode</button>
                     </div>
                   ))}
                 </div>
@@ -68,9 +72,9 @@ const PodcastInfo = () => {
           ))}
         </div>
       </div>
+      {selectedEpisodeFile && <AudioPlayer episodeFile={selectedEpisodeFile} />}
     </div>
   );
 };
 
 export default PodcastInfo;
-

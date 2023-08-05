@@ -7,16 +7,17 @@ export const Header = () => {
       <div className="container">
         <div className="inner-content">
           <div className="brand">
+            <img className="header--logo" src="./audio-waves.png" />
             <Link to="/home">Podverse</Link>
           </div>
 
           <ul className="nav-links">
             <li>
-              <Link to="/watchlater">Watch Later</Link>
+              <Link to="/home">Home</Link>
             </li>
 
             <li>
-              <Link to="/home">Home</Link>
+              <Link to="/watchlater">Watch Later</Link>
             </li>
 
             <li>
