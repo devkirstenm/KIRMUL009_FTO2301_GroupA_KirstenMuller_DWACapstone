@@ -7,6 +7,13 @@ export default (state, action) => {
                 ...state, // existing state
                 watchlater: [action.payload, ...state.watchlater]
             }
+        case "REMOVE_PODCAST_FROM_WATCHLATER":
+            return {
+                ...state, 
+                watchlater: state.watchlater.filter(
+                    (podcast) => podcast.id !== action.payload // remove the id
+                )
+            }
         // default state = return state
         default:
             return state 

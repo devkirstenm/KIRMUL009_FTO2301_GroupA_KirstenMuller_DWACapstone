@@ -33,6 +33,10 @@ export const GlobalProvider = (props) => {
         dispatch({ type: "ADD_PODCAST_TO_WATCHLATER", payload: podcast })
     }
 
+    const removePodcastFromWatchlater = (id) => { // only need the id
+        dispatch({ type: "REMOVE_PODCAST_FROM_WATCHLATER", payload: id})
+    }
+
     // return statements explanations:
     // value: the values available form the provider
     // {props.children} wraps all the elements of the application to access the global context from every component
@@ -43,6 +47,7 @@ export const GlobalProvider = (props) => {
                 watchlater: state.watchlater, 
                 favorites: state.favorites, 
                 addPodcastToWatchlater,
+                removePodcastFromWatchlater
             }}
         > 
             {props.children}

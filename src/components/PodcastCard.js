@@ -33,6 +33,7 @@ export const PodcastCard = ({ podcast, type }) => {
                         <p><span class="preview--bold--text">Genres:</span> {podcast.genres.map(genreId => genreMapping[genreId]).join(', ')}</p>
                         <p><span class="preview--bold--text">Updated:</span> {format(new Date(podcast.updated), "d MMMM yyyy, HH:mm a")}</p>
                     </div> 
+                    <PodcastControls type={type} podcast={podcast} />
                 </div>
             </div> 
         </div>

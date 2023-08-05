@@ -6,7 +6,7 @@ export const Watchlater = () => {
   const { watchlater } = useContext(GlobalContext)
 
   return (
-    <div className="watchlater-page">
+    <div>
       {watchlater.length > 0 ? (
         <div className="podcast-previews">
         {watchlater.map((podcast) => ( // parameter 'podcast' represents each item in the array during each iteration of the .map function (see README.md for more of an explanation)

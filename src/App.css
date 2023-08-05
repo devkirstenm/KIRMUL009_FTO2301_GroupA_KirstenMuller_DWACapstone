@@ -383,3 +383,25 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 font-weight: bolder;
 }
 
+.inner-card-controls {
+  position: relative;
+}
+
+.button-x {
+  position: absolute;
+  margin-left: 120px;
+  bottom: 330px;
+  padding: 8px 12px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.button-x:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
