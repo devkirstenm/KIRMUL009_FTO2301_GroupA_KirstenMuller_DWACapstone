@@ -407,6 +407,13 @@ font-weight: bolder;
 }
 
 /* Home */
+
+.image-slider {
+  width: 1280px;
+  height: 720px;
+  margin: 0 auto;
+}
+
 .recommendations {
   display: flex;
   justify-content: center;
@@ -417,16 +424,9 @@ font-weight: bolder;
 .recommendations--title {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 40px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
  }
  
- .recommendations--subtitle {
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   color: #918E9B;
-   margin-top: 0px;
- 
- }
-
 .open-preview-button {
   background-color: #007bff; /* Blue background color, you can change it to your preferred color */
   color: #ffffff; /* Text color */
@@ -453,4 +453,131 @@ font-weight: bolder;
   height: 40px; /* Set the desired height */
   overflow: hidden; /* Hide overflowing content */
   text-overflow: ellipsis; /* Show ellipsis (...) for cut-off text */
+}
+
+
+/* MODAL */
+.modal--overlay {
+  position: absolute;
+  /* width: 100%; this makes it go over the right edge*/
+  height: 100%;
+  background-color: rgba(72, 99, 218, 0.6); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Apply the 'display: none;' to hide the modal by default */
+.modal--overlay.hidden {
+  display: none;
+}
+
+.modal--content { /* styling for all content of clicked podcast*/
+  text-align: center; 
+}
+
+.selected--podcast--image {
+  max-width: 300px;
+}
+
+.selected--podcast--season--image {
+  max-width: 150px;
+}
+
+/* modal text styling*/
+.podcast--title {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.podcast--description {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.podcast--seasons--title {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.podcast--seasons--season {
+  font-weight: bolder;
+}
+
+.podcast--episodes--title {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+}
+
+/* FOOTER */
+.footer {
+  font-size: 10px;
+  display: flex; /* Sets the container to use Flexbox */
+  justify-content: center; /* Horizontally centers the content */
+}
+
+/* Audio Player */
+.audio--player {
+  display: flex; /* display in a single line*/
+  align-items: center;
+  width: 700px;
+  background: whitesmoke;
+  justify-content: center;
+
+}
+
+.forward--backward--button {
+  background: none;
+  border: none;
+  display: flex; /* centre arrows */
+  align-items: center;
+  font-family: monospace;
+  font-size: 16px;
+  cursor: pointer; /* cursor changes to pointer when hovered over */
+}
+
+.forward--backward--button:hover {
+  color: #3498DB;
+}
+
+.play--pause--button {
+  background: #3498DB;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pause--button {
+  background: none;
+}
+
+.play--button {
+  background: none;
+  position: relative; /* needed because play button wasn't centered */
+  left: 5px;
+}
+
+.current--time {
+  background: none;
+  font-family: monospace;
+  font-size: 16px;
+  margin-left: 30px;
+}
+
+.duration {
+  background: none;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.progress--bar {
+  background: none;
 }
