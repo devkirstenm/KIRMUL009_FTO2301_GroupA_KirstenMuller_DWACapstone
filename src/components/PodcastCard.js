@@ -26,7 +26,7 @@ export const PodcastCard = ({ podcast, type }) => {
                     <div className="preview--image">
                         <img src={podcast.image} className="podcast--image" />  
                     </div >  
-                    <div className="preview--text">     
+                    <div className="watchlater-preview-text">     
                         <h2>{podcast.title}</h2>
                         <p>{podcast.description.split(' ').slice(0, 20).join(' ')}...</p> {/* 'split' splits description into array of individual words. 'slice 0,20' extract first 20 words from array, which we join back together. Then append with '...' */}
                         <p><span className="preview--bold--text">Seasons:</span> {podcast.seasons}</p>

@@ -36,7 +36,7 @@ export const Watchlater = () => {
     <div className="container">
       {/* Sorting options */}
       <form className="sorting--options">
-        <label htmlFor="sorting">Sort by:</label>
+        <label htmlFor="sorting" className="sort-by">Sort by:</label>
         <br />
         <select id="sorting" value={selectedOption} onChange={handleSortingChange}>
           <option value="a-z">A-Z</option>
