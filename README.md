@@ -1,12 +1,12 @@
-# PodVerse - Final Capstone Project
+# PodVerse - Final Capstone Project 💻
 
 Welcome to PodVerse, the ultimate platform to explore and enjoy podcasts! 🎙️🔥
 
-## Overview
+## Overview 🧑🏻‍💻
 
 This project is the final capstone for the CodeSpace Software Development Program. It's a podcast platform built using React, JavaScript, CSS, and HTML. The website link is [podverse.netlify.app](https://podverse.netlify.app).
 
-## Project Features
+## Project Features ⚙️
 
 I successfully implemented the following key features:
 
@@ -54,7 +54,7 @@ I successfully implemented the following key features:
 ✅ User is presented with a sliding carousel of possible shows they might be interested in on the landing page
 ✅ User favourites are stored in the local storage
 
-## Getting Started
+## Getting Started 🖰
 
 To run this project locally:
 
