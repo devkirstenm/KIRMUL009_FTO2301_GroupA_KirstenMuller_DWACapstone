@@ -17,7 +17,7 @@ export const Header = () => {
             </li>
 
             <li>
-              <Link to="/watchlater">Watch Later</Link>
+              <Link to="/watchlater">My Favorites</Link>
             </li>
 
             <li>

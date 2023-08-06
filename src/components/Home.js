@@ -1,7 +1,7 @@
 import React from "react"
 import { format } from 'date-fns'; // automatically formats date and time in correct format
 import ImageSlider from "./ImageSlider";
-import { Link } from "react-router-dom"; // Import the Link component
+import { Link } from "react-router-dom"; 
 
 export default function Main() {
 
@@ -57,7 +57,7 @@ export default function Main() {
   return (
       <main className="inner-container">
         <div className="recommendations">
-          <h1 className="recommendations--title" >Trending Now</h1>
+          <h1 className="recommendations--title" >Trending Now in South Africa</h1>
           <div className="image-slider">
             <ImageSlider slides={slides} />
           </div>

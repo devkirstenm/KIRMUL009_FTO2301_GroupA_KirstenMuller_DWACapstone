@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react"; // Import useEffect and useState
+import React, { useEffect, useState } from "react"; 
 import { useParams } from "react-router-dom";
 import AudioPlayer from "./AudioPlayer";
 
 const PodcastInfo = () => {
-  const { id } = useParams(); // Get the podcast ID from the URL parameter
+  const { id } = useParams(); // getting the podcast ID from the URL parameter
   console.log(id)
 
   const [selectedPodcast, setSelectedPodcast] = useState(null); // the initial value of selectedPodcast should be set to null instead of undefined, since it will be updated with an object (the data fetched from the API) later on.
 
-  const [selectedEpisodeFile, playEpisode] = useState(null); // Rename setSelectedEpisodeFile to playEpisode
+  const [selectedEpisodeFile, playEpisode] = useState(null); // 
 
     useEffect(() => {
         fetch(`https://podcast-api.netlify.app/id/${id}`)
@@ -20,10 +20,10 @@ const PodcastInfo = () => {
         });
     }, [id]);
 
-     // State to keep track of the expanded state for each season
+     // state to keep track of the expanded state for each season
     const [expandedSeasons, setExpandedSeasons] = useState({});
 
-    // Function to toggle the expanded state for a season
+    // function to toggle the expanded state for a season
     const toggleSeasonExpansion = (season) => {
         setExpandedSeasons((prevExpandedSeasons) => ({
         ...prevExpandedSeasons,

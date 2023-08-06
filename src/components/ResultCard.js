@@ -23,7 +23,7 @@ export const ResultCard = ({podcast}) => {
                         className="watchlater-button"
                         disabled={watchlaterDisabled} // disables podcast if it's already in the watchlist
                         onClick={() => addPodcastToWatchlater(podcast)}
-                        >ADD TO WATCHLATER
+                        >ADD TO FAVORITES
                     </button>
                 </div> 
             </div> 
