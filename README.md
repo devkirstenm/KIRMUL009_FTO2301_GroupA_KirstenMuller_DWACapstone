@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# PodVerse - Final Capstone Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to PodVerse, the ultimate platform to explore and enjoy podcasts! 🎙️🔥
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This project is the final capstone for the CodeSpace Software Development Program. It's a podcast platform built using React, JavaScript, CSS, and HTML. The website link is [podverse.netlify.app](https://podverse.netlify.app).
 
-### `npm start`
+## Project Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I successfully implemented the following key features:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+✅Project is deployed to a custom Netlify URL
+✅ All favicon information has been created an added correctly via https://realfavicongenerator.net/ (you are welcome to use any free PNG image you find on https://www.flaticon.com/)
+✅ All metatag information has been created and added via https://metatags.io/ (You are welcome to use any free image on https://unsplash.com/). Be mindful to manually replace all URL values (especially image URL) to absolute Netlify URL values (you will need to deploy to Netlify first)
 
-### `npm test`
+✅ All show data loaded via a fetch call from the https://podcast-api.netlify.app/shows
+✅ When viewing a specific show, data is loaded via fetch from individual show endpoint
+✅ There is a loading state while initial data is being loaded
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+✅ User can view the details of a show broken down into seasons, sorted by number
+✅ User can listen to any episode in a season of a show
+✅ User can see a view where only episodes for a specifically selected season are shown
+✅ User can toggle between different seasons for the same show
 
-### `npm run build`
+✅ User can see the name of all available shows on the platform
+✅ User sees preview image of shows when browsing
+✅ User sees the amount of seasons per show as a number when browsing
+✅ User sees a human-readable date as to when a show was last updated
+✅ User sees what genres (as genre titles) a show is associated with when browsing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ User sees a preview image of seasons for a specific show
+✅ User sees the amount of episodes in a season as a number
+✅ User can go back to a show view from a season-specific view
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✅ User can mark specific shows as favourites to find them again
+✅ User can visit a view where they see all their favourites
+✅ User is able to remove episodes from their favourites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+✅ User can arrange the list of shows by title from A-Z
+✅ User can arrange the list of shows by title from Z-A
+✅ User can arrange the list of shows by date updated in ascending order
+✅ User can arrange the list of shows by date updated in descending order
+✅ User can filter shows by title through a text input
 
-### `npm run eject`
+✅ User can arrange favourites by show titles from A-Z
+✅ User can arrange favourites by show titles from Z-A
+✅ User can arrange favourites by date updated in ascending order
+✅ User can arrange favourites by date updated in descending order
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+✅ Audio player shows current progress and episode length as timestamps
+✅ Audio player is always visible, so the user can listen to episodes while they browse
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+✅ User is presented with a sliding carousel of possible shows they might be interested in on the landing page
+✅ User favourites are stored in the local storage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To run this project locally:
 
-## Learn More
+1. Clone the repository: `git clone https://github.com/your-username/podverse.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm start`
+4. Open your browser and navigate to `http://localhost:3000`. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy exploring the world of podcasts with PodVerse! 🎧🌟

@@ -49,7 +49,7 @@ const PodcastInfo = () => {
                 className="season-info"
                 onClick={() => toggleSeasonExpansion(season.season)}
               >
-                {`Season ${season.season}: ${season.title}`}
+                {`Season ${season.season}: ${season.title} (${season.episodes.length} episodes)`}
               </p>
               <img
                 src={season.image}
